@@ -270,6 +270,12 @@
           <command_interface name="cog.x"/>
           <command_interface name="cog.y"/>
           <command_interface name="cog.z"/>
+          <command_interface name="inertia.xx"/>
+          <command_interface name="inertia.yy"/>
+          <command_interface name="inertia.zz"/>
+          <command_interface name="inertia.xy"/>
+          <command_interface name="inertia.xz"/>
+          <command_interface name="inertia.yz"/>
           <command_interface name="payload_async_success"/>
         </gpio>
 
@@ -288,8 +294,44 @@
           <command_interface name="zero_ftsensor_async_success"/>
         </gpio>
 
+        <gpio name="${tf_prefix}force_mode_params">
+          <command_interface name="force_mode_params_damping"/>
+          <command_interface name="force_mode_params_gain_scaling"/>
+          <command_interface name="force_mode_params_async_success"/>
+        </gpio>
+
+        <gpio name="${tf_prefix}freedrive_mode">
+          <command_interface name="async_success"/>
+          <command_interface name="enable"/>
+          <command_interface name="abort"/>
+          <command_interface name="params_vector_x"/>
+          <command_interface name="params_vector_y"/>
+          <command_interface name="params_vector_z"/>
+          <command_interface name="params_vector_rx"/>
+          <command_interface name="params_vector_ry"/>
+          <command_interface name="params_vector_rz"/>
+          <command_interface name="params_feature_pose_vector_x"/>
+          <command_interface name="params_feature_pose_vector_y"/>
+          <command_interface name="params_feature_pose_vector_z"/>
+          <command_interface name="params_feature_pose_vector_rx"/>
+          <command_interface name="params_feature_pose_vector_ry"/>
+          <command_interface name="params_feature_pose_vector_rz"/>
+          <command_interface name="params_feature_constant_base"/>
+          <command_interface name="params_feature_constant_tool"/>
+        </gpio>
+
         <gpio name="${tf_prefix}system_interface">
           <state_interface name="initialized"/>
+        </gpio>
+
+        <gpio name="${tf_prefix}tcp_offset">
+          <command_interface name="pose.x"/>
+          <command_interface name="pose.y"/>
+          <command_interface name="pose.z"/>
+          <command_interface name="pose.rx"/>
+          <command_interface name="pose.ry"/>
+          <command_interface name="pose.rz"/>
+          <command_interface name="tcp_offset_async_success"/>
         </gpio>
 
         <gpio name="${tf_prefix}get_robot_software_version">
